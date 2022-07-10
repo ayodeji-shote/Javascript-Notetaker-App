@@ -1,0 +1,172 @@
+*, *::after, *::before {
+    border: 1;
+    margin: 0;
+    padding: 1;
+    box-sizing: border-box;
+}  
+// colors for the note pad hex code taken from the site coolors.co
+$main: #5448C8;
+$font: #261C15;
+$light: #F7F7F2;
+$allowed: #730071;
+$denied: #F15156;
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+body {
+    font-family: 'Anton', sans-serif;
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+    color: $font;
+} 
+.form-container {
+max-width: 1000px;
+margin:2rem auto;
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  h3 {
+    color: $allowed;
+    text-align: center;
+  }
+  .noteContent{
+    margin: 2rem 0 2rem;
+    padding: 2rem;
+    text-align: center;
+    color: light;
+    &.warning{
+      background-color:$main ;
+      box-shadow: 2px 4px 7px 2px rgba($main, .2);
+    }
+    &.removed-option {
+      background-color:$denied ;
+      box-shadow: 2px 4px 7px 2px rgba($denied, .2);
+    }
+    &.accepted-option {
+      background-color:$allowed ;
+      box-shadow: 2px 4px 7px 2px rgba($allowed, .2);
+    }
+  }
+}
+
+form {
+  display: grid;
+  grid-gap: 1rem;
+  margin: 2rem 0;
+  width: 100%;
+  
+  label, input, textarea {
+    font-family: inherit;
+    font-size: inherit;
+  }
+  [for="title"]{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    grid-gap: 1rem;
+    background-color: $light;
+  
+    input{
+      flex: 1 1 60%;
+      border: 4px solid $light;
+      padding: 1rem;
+      color: $font;
+      width: 80%;
+      
+      &:focus {
+        outline: 2px solid $font;
+      }
+    }
+}
+  [for="notes"] {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    grid-gap: 1rem;
+    background-color: $light;
+  
+    textarea {
+      flex: 1 1 60%;
+      border: 4px solid $light;
+      padding: 1rem;
+      color: $font;
+      width: 80%;
+      
+      &:focus {
+        outline: 2px solid $font;
+      }
+    }
+}
+
+[type="submit"]{
+  background-color: $allowed;
+  border: 3px solid transparent;
+  font-size: 1rem;
+  color: $light;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+  
+  &:hover, &:focus {
+    outline: none;
+    border: 3px solid rgba($font, .5);
+  }
+}
+}
+.note-container {
+  margin: 2rem auto 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit);
+.note {
+  border: 3px solid;
+  color:rgba($font, .2);
+  padding: 1.5rem;
+  transition: all 250ms ease-in-out;
+}
+.title {
+  color: $font;
+  text-align: center;
+  font-size:1rem;
+  margin-bottom: 1rem;
+}
+.body {
+  overflow: hidden;
+  text-align: center;
+  font-size: 0.8rem;
+  color: $font;
+}
+
+.options{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: .5rem;
+  .option {
+    font-family: inherit;
+    font-size: inherit;
+    align-items: center;
+    padding: 1rem 1rem;
+    color: $light;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+    &:hover, &:focus {
+      outline: none;
+      border: 3px solid rgba($font, .5);
+    }
+  }
+  .edit{
+    background-color: $main;
+    box-shadow: rgba($main, .2);
+  }
+  .delete{
+    background-color: $denied;
+    box-shadow: rgba($denied, .2);
+  }
+}
+
+}

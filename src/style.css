@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+*, *::after, *::before {
+  border: 1;
+  margin: 0;
+  padding: 1;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Anton", sans-serif;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  color: #261C15;
+}
+
+.form-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+.form-container h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+.form-container h3 {
+  color: #730071;
+  text-align: center;
+}
+.form-container .noteContent {
+  margin: 2rem 0 2rem;
+  padding: 2rem;
+  text-align: center;
+  color: light;
+}
+.form-container .noteContent.warning {
+  background-color: #5448C8;
+  box-shadow: 2px 4px 7px 2px rgba(84, 72, 200, 0.2);
+}
+.form-container .noteContent.removed-option {
+  background-color: #F15156;
+  box-shadow: 2px 4px 7px 2px rgba(241, 81, 86, 0.2);
+}
+.form-container .noteContent.accepted-option {
+  background-color: #730071;
+  box-shadow: 2px 4px 7px 2px rgba(115, 0, 113, 0.2);
+}
+
+form {
+  display: grid;
+  grid-gap: 1rem;
+  margin: 2rem 0;
+  width: 100%;
+}
+form label, form input, form textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+form [for=title] {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  grid-gap: 1rem;
+  background-color: #F7F7F2;
+}
+form [for=title] input {
+  flex: 1 1 60%;
+  border: 4px solid #F7F7F2;
+  padding: 1rem;
+  color: #261C15;
+  width: 80%;
+}
+form [for=title] input:focus {
+  outline: 2px solid #261C15;
+}
+form [for=notes] {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  grid-gap: 1rem;
+  background-color: #F7F7F2;
+}
+form [for=notes] textarea {
+  flex: 1 1 60%;
+  border: 4px solid #F7F7F2;
+  padding: 1rem;
+  color: #261C15;
+  width: 80%;
+}
+form [for=notes] textarea:focus {
+  outline: 2px solid #261C15;
+}
+form [type=submit] {
+  background-color: #730071;
+  border: 3px solid transparent;
+  font-size: 1rem;
+  color: #F7F7F2;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+form [type=submit]:hover, form [type=submit]:focus {
+  outline: none;
+  border: 3px solid rgba(38, 28, 21, 0.5);
+}
+
+.note-container {
+  margin: 2rem auto 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit);
+}
+.note-container .note {
+  border: 3px solid;
+  color: rgba(38, 28, 21, 0.2);
+  padding: 1.5rem;
+  transition: all 250ms ease-in-out;
+}
+.note-container .title {
+  color: #261C15;
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.note-container .body {
+  overflow: hidden;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #261C15;
+}
+.note-container .options {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 0.5rem;
+}
+.note-container .options .option {
+  font-family: inherit;
+  font-size: inherit;
+  align-items: center;
+  padding: 1rem 1rem;
+  color: #F7F7F2;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+.note-container .options .option:hover, .note-container .options .option:focus {
+  outline: none;
+  border: 3px solid rgba(38, 28, 21, 0.5);
+}
+.note-container .options .edit {
+  background-color: #5448C8;
+  box-shadow: rgba(84, 72, 200, 0.2);
+}
+.note-container .options .delete {
+  background-color: #F15156;
+  box-shadow: rgba(241, 81, 86, 0.2);
+}/*# sourceMappingURL=style.css.map */
